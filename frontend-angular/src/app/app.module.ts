@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ProductService} from "./service/product.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -10,9 +13,11 @@ import { ProductListComponent } from './component/product-list/product-list.comp
     ProductListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    NgOptimizedImage
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
